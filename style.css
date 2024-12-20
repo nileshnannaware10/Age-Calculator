@@ -1,0 +1,112 @@
+:root {
+    --bg-light: #a6a6db;
+    --bg-dark: #1e1e1e;
+    --text-light: #1e1e1e;
+    --text-dark: #f9f9f9;
+    --primary-light: #4CAF50;
+    --primary-dark: #388E3C;
+    --accent-light: #3a3d5c;
+    --accent-dark: #E64A19;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-theme {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.age-calculator {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark-theme .age-calculator {
+    background: var(--bg-dark);
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--primary-light);
+    margin-bottom: 20px;
+}
+
+input {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-light);
+    outline: none;
+}
+
+button {
+    padding: 12px 25px;
+    background: var(--primary-light);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent-light);
+}
+
+.theme-toggle {
+    margin-top: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--accent-light);
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-dark);
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.dark-theme footer {
+    color: var(--text-dark);
+}

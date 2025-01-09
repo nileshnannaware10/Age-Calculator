@@ -1,28 +1,40 @@
 let isDarkTheme = false;
 
-        function calculateAge() {
-            const birthdate = document.getElementById('birthdate').value;
-            if (!birthdate) {
-                document.getElementById('result').innerHTML = '<p style="color:red;">Please enter your birthdate.</p>';
-                return;
-            }
+function calculateAge() {
+    const birthdate = document.getElementById('birthdate').value;
+    const resultDiv = document.getElementById('result');
 
-            const birthDateObj = new Date(birthdate);
-            const today = new Date();
+    if (!birthdate) {
+        resultDiv.innerHTML = '<p style="color:red;">Please enter your birthdate.</p>';
+        return;
+    }
 
-            let age = today.getFullYear() - birthDateObj.getFullYear();
-            const monthDiff = today.getMonth() - birthDateObj.getMonth();
+    const birthDateObj = new Date(birthdate);
+    const today = new Date();
 
-            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
-                age--;
-            }
+    let years = today.getFullYear() - birthDateObj.getFullYear();
+    let months = today.getMonth() - birthDateObj.getMonth();
+    let days = today.getDate() - birthDateObj.getDate();
 
-            document.getElementById('result').innerHTML = `<p>You are <strong>${age}</strong> years old.</p>`;
-        }
+    if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
 
-        function toggleTheme() {
-            isDarkTheme = !isDarkTheme;
-            document.body.classList.toggle('dark-theme', isDarkTheme);
-            const themeToggleButton = document.querySelector('.theme-toggle');
-            themeToggleButton.textContent = isDarkTheme ? 'Switch to Light Theme' : 'Switch to Dark Theme';
-        }
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    resultDiv.innerHTML = `<p>You are <strong>${years}</strong> years, <strong>${months}</strong> months, and <strong>${days}</strong> days old.</p>`;
+}
+
+function resetCalculator() {
+    document.getElementById('birthdate').value = '';
+    document.getElementById('result').innerHTML = '';
+}
+
+function toggleTheme() {
+    isDarkTheme = !isDarkTheme;
+    document.body.classList.toggle('dark-theme', isDarkTheme);
+}

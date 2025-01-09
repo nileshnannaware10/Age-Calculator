@@ -1,24 +1,32 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Age Calculator</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Enhanced Age Calculator</title>
+        <meta name="description" content="A user-friendly age calculator with advanced features and dark mode support.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- Age Calculator Container -->
         <div class="age-calculator">
             <h1>Age Calculator</h1>
+            <p class="subtitle">Enter your birthdate to calculate your age in years, months, and days.</p>
             <input type="date" id="birthdate" placeholder="Enter your birthdate">
-            <button onclick="calculateAge()">Calculate Age</button>
+            <div class="button-group">
+                <button onclick="calculateAge()">Calculate Age</button>
+                <button onclick="resetCalculator()">Reset</button>
+            </div>
             <div class="result" id="result"></div>
-            <button class="theme-toggle" onclick="toggleTheme()"> Dark Theme</button>
+            <button class="theme-toggle" onclick="toggleTheme()">Dark Theme</button>
         </div>
+        
+        <!-- Footer Section -->
         <footer>
-            &copy; 2024 Age Calculator. All rights reserved.
+            &copy;Nilesh Nannaware All Rights Reserved.
         </footer>
-    
+
         <script src="script.js" async defer></script>
     </body>
 </html>
